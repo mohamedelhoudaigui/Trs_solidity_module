@@ -1,11 +1,11 @@
 FROM node:18
 
-WORKDIR /local
+WORKDIR /local_net
 
-COPY package.json ./
+COPY package.json /local_net
 
 RUN npm install
 
-COPY hardhat.config.js ./
+COPY hardhat.config.json /local_net
 
 CMD [ "npm", "run", "start" ]
